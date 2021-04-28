@@ -1,0 +1,69 @@
+{
+  "ws": {
+    "regex": ["^[\n\t ]$"],
+    "actions": "class:skip, value:string"
+  },
+  "while": {
+    "regex": ["^while$"],
+    "actions": "class:keyword"
+  },
+  "do": {
+    "regex": ["^do$"],
+    "actions": "class:keyword"
+  },
+  "end": {
+    "regex": ["^end$"],
+    "actions": "class:keyword"
+  },
+  "type": {
+    "regex": ["^int$"],
+    "actions": "class:keyword, value:match",
+    "matches": {
+      "int": "integer"
+    }
+  },
+  "assign": {
+    "regex": ["^=$"],
+    "actions": "class:operation"
+  },
+  "relop": {
+    "regex": [
+      "^<=$",
+      "^>=$",
+      "^>$",
+      "^<$"
+    ],
+    "actions": "class:operation, value:match",
+    "matches": {
+      "<=": "LE",
+      ">=": "BE",
+      ">": "BT",
+      "<": "LT"
+    }
+  },
+  "math": {
+    "regex": [
+      "^\\+$",
+      "^-$",
+      "^\\*$"
+    ],
+    "actions": "class:operation, value:match",
+    "matches": {
+      "+": "ADD",
+      "-": "SUB",
+      "*": "MUL"
+    }
+  },
+  "integer": {
+    "regex": [
+      "^[-+]?\\d+$"
+    ],
+    "actions": "class:literal, value:number"
+  },
+  "variable": {
+    "regex": [
+      "^[a-zA-Z]([a-zA-Z]|[0-9]|_)*$"
+    ],
+    "actions": "class:identifier, value:string"
+  }
+}

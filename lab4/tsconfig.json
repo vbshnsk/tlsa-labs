@@ -1,0 +1,15 @@
+{
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "typeRoots": ["node_modules/@types", "src/@types"],
+    "outDir": "dist",
+    "lib": ["ESNext", "DOM"],
+    "target": "ES2019",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}
