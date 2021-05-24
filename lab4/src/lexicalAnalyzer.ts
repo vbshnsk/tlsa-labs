@@ -15,7 +15,7 @@ type RawPatternData = {
     actions?: string,
     matches?: Record<string, string>
 };
-type Match = {
+export type Match = {
     name: string,
     class: string,
     line: number,
